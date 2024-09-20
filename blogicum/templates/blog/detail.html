@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Детали поста{% endblock %}
+
+{% block content %}
+    {% if post %}
+    <article>
+        <h1>{{ post.location }}</h1>
+        <p><strong>Дата:</strong> {{ post.date }}</p>
+        <p><strong>Категория:</strong> {{ post.category }}</p>
+        <div>
+            <strong>Текст:</strong>
+            <p>{{ post.text|linebreaks }}</p>
+        </div>
+    </article>
+    {% else %}
+    <p>Пост не найден.</p>
+    {% endif %}
+{% endblock %}
